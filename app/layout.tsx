@@ -1,3 +1,4 @@
+import { Header } from '@/components';
 import { UrbanBazaar } from '@/styles';
 import '@/styles/globals.css';
 import { ThemeProvider } from '@/styles/theme/ThemeProvider';
@@ -13,9 +14,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang='en' data-theme='light'>
+    <html lang='en'>
       <ThemeProvider>
         <body className={`${open_sans.className} bg-bg text-fc`}>
+          <Header />
           {children}
         </body>
       </ThemeProvider>
