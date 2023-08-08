@@ -1,15 +1,9 @@
 import { SearchBtn } from '@/components/client';
 import { Input } from '@/lib/shadcn/components/ui/input';
 import { logo } from '@/public/images';
-import { MagnifyingGlassIcon, Bars3Icon } from '@heroicons/react/24/solid';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/lib/shadcn/components/ui/avatar';
 
 type Props = {};
 
@@ -18,16 +12,17 @@ const avatarImage =
 
 export default function Header({}: Props) {
   return (
-    <header className='bg-red-3000 flex items-center py-2 px-4 space-x-2 shadow-md'>
+    <header className='bg-red-3000 flex items-center p-4 space-x-2 shadow-md'>
       {/* flex item 1 */}
       <Link href='/'>
-        <Image
-          src={logo}
-          alt='ShopSleek'
-          width={100}
-          height={100}
-          className='object-contain shrink-1 cursor-pointer'
-        />
+        <div className='relative h-10 w-28'>
+          <Image
+            src={logo}
+            alt='ShopSleek'
+            fill={true}
+            className='object-contain shrink-1 cursor-pointer'
+          />
+        </div>
       </Link>
 
       {/* Form (server action) */}
@@ -41,7 +36,7 @@ export default function Header({}: Props) {
             name='searchTerm'
             type='text'
             placeholder="Let's go shopping"
-            className='w-full h-full bg-transparent focus:outline-none'
+            className='w-full h-full bg-transparent text-tfc focus:outline-none'
           />
         </div>
 
