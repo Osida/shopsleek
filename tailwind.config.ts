@@ -1,4 +1,5 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
+import { UrbanBazaar } from './styles';
 
 const config: Config = {
   content: [
@@ -8,13 +9,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: 'rgb(var(--c-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--c-secondary) / <alpha-value>)',
+        accent: 'rgb(var(--c-accent) / <alpha-value>)',
+        bg: 'rgb(var(--c-bg) / <alpha-value>)',
+        fc: 'rgb(var(--c-fc) / <alpha-value>)',
+      },
+      fontFamily: {
+        heading: ['Roboto Condensed', 'sans-serif'],
+        paragraph: ['Open Sans', 'sans-serif'],
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
