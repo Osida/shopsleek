@@ -1,7 +1,7 @@
-import { Header } from '@/components';
+import { Header } from '@/components/server';
 import { UrbanBazaar } from '@/styles';
 import '@/styles/globals.css';
-import { ThemeProvider } from '@/styles/theme/ThemeProvider';
+import { ThemeProvider } from '@/styles/theme-provider/ThemeProvider';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='en'>
       <ThemeProvider>
-        <body className={`${open_sans.className} bg-bg text-fc`}>
+        <body className={`${open_sans.className} bg-tbg text-tfc`}>
           <Header />
           {children}
         </body>
